@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body class="bg-blue-200">
+    <h1 class="text-4xl font-bold text-center mb-4 bg-blue-200 text-black p-4 rounded">Weather Dashboard</h1>
+    <div id="dashboard" class="container mx-auto p-4 bg-opacity-50 rounded-lg shadow-lg h-full flex items-center justify-center bg-cover bg-center">
+        <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md bg-opacity-0">
+            <div class="flex space-x-1 mb-4">
+                <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" class="w-full px-4 py-2 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="flex space-x-2 mb-4">
+                <button id="searchButton" class="flex-grow bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 shadow-md">
+                    Search
+                </button>
+                <button id="currentLocationButton" class="flex-grow bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 shadow-md">
+                    Use Current Location
+                </button>
+                <button id="recentCitiesButton" class="flex-grow bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 shadow-md hidden">
+                    Recent Cities
+                </button>
+            </div>
+            <div class="relative mb-4 dropdown">
+                <div id="recentCitiesList" class="absolute hidden bg-white shadow-md rounded-lg mt-2 w-full dropdown-content">
+                    <!-- Recent cities will be appended here -->
+                </div>
+            </div>
+            <div id="errorDisplay" class="text-red-500 mb-4"></div>
+            <div id="weatherDisplay" class="hidden bg-blue-500 text-white p-4 mb-4 shadow-md rounded-lg w-full mx-auto">
+                <!-- Weather information will be displayed here -->
+            </div>
+        </div>
+    </div>
+    <script src="../src/app.js"></script>
+</body>
+</html>
