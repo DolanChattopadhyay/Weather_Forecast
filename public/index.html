@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link href="./styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-blue-200">
     <h1 class="text-4xl font-bold text-center mb-4 bg-blue-200 text-black p-4 rounded">Weather Dashboard</h1>
-    <div id="dashboard" class="container mx-auto p-4 bg-opacity-50 rounded-lg shadow-lg h-full flex items-center justify-center bg-cover bg-center">
+    <div id="dashboard" class="container mx-auto p-4 bg-opacity-50 rounded-lg shadow-lg h-full flex items-center justify-center bg-cover bg-center" style="background-color: rgba(173, 216, 230, 0.5);">
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md bg-opacity-0">
             <div class="flex space-x-1 mb-4">
-                <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" class="w-full px-4 py-2 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" class="w-full px-4 py-2 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
             </div>
             <div class="flex space-x-2 mb-4">
                 <button id="searchButton" class="flex-grow bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 shadow-md">
@@ -29,12 +31,35 @@
                     <!-- Recent cities will be appended here -->
                 </div>
             </div>
+
             <div id="errorDisplay" class="text-red-500 mb-4"></div>
+
             <div id="weatherDisplay" class="hidden bg-blue-500 text-white p-4 mb-4 shadow-md rounded-lg w-full mx-auto">
-                <!-- Weather information will be displayed here -->
+                <h2 id="city-name" class="text-3xl font-bold mb-4"></h2>
+                <div class="flex justify-between">
+                    <div class="flex-1">
+                        <p id="temperature" class="mb-2 text-lg"></p>
+                        <p id="wind" class="mb-2 text-lg"></p>
+                        <p id="humidity" class="mb-2 text-lg"></p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <img id="weather-icon" src="" alt="Weather icon" class="inline-block w-16 h-16 mb-2">
+                        <p id="weather-description" class="text-lg mt-2"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative mb-4 text-center">
+                <h3 id="extendedForecast" class="hidden bg-blue-500 px-4 py-2 rounded-lg inline-block">5-Day Forecast</h3>
+                <div id="extendedForecastDisplay" class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4"></div>
             </div>
         </div>
     </div>
     <script src="../src/app.js"></script>
 </body>
+
 </html>
+
+
+
+

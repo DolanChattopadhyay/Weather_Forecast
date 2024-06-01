@@ -97,8 +97,7 @@ function displayExtendedForecast(data) {
     for (let i = 0; i < data.list.length; i += 8) {
         const forecast = data.list[i];
         const forecastItem = document.createElement('div');
-        forecastItem.className = 'forecast-item bg-lime-300 text-blue-950 p-4 rounded-lg shadow-md';
-
+        forecastItem.className = 'forecast-item bg-white text-blue-950 p-4 rounded-lg shadow-md';
         forecastItem.innerHTML = `
             <p>${new Date(forecast.dt * 1000).toLocaleDateString()}</p>
             <p>Temp: ${forecast.main.temp.toFixed(2)}°C</p>
@@ -172,15 +171,11 @@ async function changeBackgroundImage(city) {
             document.getElementById('dashboard').style.backgroundImage = `url(${data.results[0].urls.regular})`;
             document.getElementById('dashboard').style.backgroundSize = 'cover';
             document.getElementById('dashboard').style.backgroundPosition = 'center';
-            // Remove background color if there's an image
-            document.getElementById('dashboard').style.backgroundColor = '';
         } else {
-            // No image found, set background color to lime-300
             document.getElementById('dashboard').style.backgroundImage = 'none';
-            document.getElementById('dashboard').style.backgroundColor = 'lime-300';
+            document.getElementById('dashboard').style.backgroundColor = 'white';
         }
     } catch {
-        // Error occurred, set background color to white
         document.getElementById('dashboard').style.backgroundImage = 'none';
         document.getElementById('dashboard').style.backgroundColor = 'white';
     }
