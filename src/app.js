@@ -34,16 +34,6 @@ document.getElementById('recentCitiesButton').addEventListener('click', () => {
     recentCitiesList.classList.toggle('hidden');
 });
 
-// Event listener for opening dropdown
-document.getElementById('recentCitiesButton').addEventListener('click', () => {
-    document.getElementById('recentCitiesList').classList.remove('hidden');
-});
-
-// Event listener for closing dropdown
-document.getElementById('closeDropdown').addEventListener('click', () => {
-    document.getElementById('recentCitiesList').classList.add('hidden');
-});
-
 
 // Hide dropdown when clicking outside
 document.addEventListener('click', (event) => {
