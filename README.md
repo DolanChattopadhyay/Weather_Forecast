@@ -14,7 +14,7 @@ A weather forecast application developed using JavaScript, HTML, and Tailwind CS
 ## Setup
 
 1. Clone the repository: "git clone https://github.com/DolanChattopadhyay/Weather_Forecast.git"
-2. Navigate to the project directory: "cd weather-dashboard"
+2. Navigate to the project directory: "cd Weather_Forecast"
 3. Open index.html in your browser to view the application.
 
 ## Usage
