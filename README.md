@@ -23,9 +23,9 @@ Click "Use Current Location" to view the weather forecast for your current locat
 Click "Recent Cities" to view a dropdown of recently searched cities and select a city to view its weather forecast.
 
 ## Dependencies
-Tailwind CSS
-OpenWeatherMap API
-Unsplash API
+1.Tailwind CSS
+2.OpenWeatherMap API
+3.Unsplash API
 
 ## License
 This project is licensed under the MIT License. 
