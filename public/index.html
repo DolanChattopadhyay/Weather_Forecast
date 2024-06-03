@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link href="./styles.css" rel="stylesheet">
 </head>
+
 <body class="bg-white">
     <!-- Header Section -->
     <h1 class="text-4xl font-bold text-center mb-4 bg-gray-700 text-white p-4 rounded">Weather Dashboard</h1>
-    
+
     <!-- Main Dashboard Container -->
-    <div id="dashboard" class="container border-4 mx-auto p-4 bg-opacity-50 rounded-lg shadow-lg h-full flex items-center justify-center bg-cover bg-center" style="background-color: white;">
-        <div class="max-w-4xl mx-auto border-4 border-white shadow-cyan-500/50 bg-white p-6 rounded-lg shadow-md bg-opacity-0">
-            
+    <div id="dashboard"
+        class="container border-4 mx-auto p-4 bg-opacity-50 rounded-lg shadow-lg h-full flex items-center justify-center bg-cover bg-center"
+        style="background-color: white;">
+        <div
+            class="max-w-4xl mx-auto border-4 border-white shadow-cyan-500/50 bg-white p-6 rounded-lg shadow-md bg-opacity-0">
+
             <!-- Input Field for City Name -->
-            <div class="flex space-x-1 mb-4">
-                <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" class="w-full text-lg px-4 py-2 border rounded-lg shadow-md focus:outline-none bg-lime-200 focus:ring-2 focus:ring-blue-950 focus:border-transparent">
+            <div class="flex space-x-1 mb-4 relative">
+                <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo"
+                    class="w-full text-lg px-4 py-2 border rounded-lg shadow-md focus:outline-none bg-lime-200 focus:ring-2 focus:ring-blue-950 focus:border-transparent">
+                <button id="clearInput"
+                    class="absolute inset-y-0 right-0 flex items-center px-3 cursor-pointer bg-transparent">
+                    <!-- SVG Icon for Clear Button -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-gray-700"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-            
+
+
             <!-- Buttons for Search, Current Location, and Recent Cities -->
             <div class="flex space-x-2 mb-4">
-                <button id="searchButton" class="flex-grow bg-blue-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-blue-950 shadow-md">
+                <button id="searchButton"
+                    class="flex-grow bg-blue-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-blue-950 shadow-md">
                     Search
                 </button>
-                <button id="currentLocationButton" class="flex-grow bg-gray-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-gray-950 shadow-md">
+                <button id="currentLocationButton"
+                    class="flex-grow bg-gray-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-gray-950 shadow-md">
                     Use Current Location
                 </button>
-                <button id="recentCitiesButton" class="flex-grow bg-blue-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-blue-950 shadow-md hidden">
+                <button id="recentCitiesButton"
+                    class="flex-grow bg-blue-700 text-white text-lg px-4 py-2 rounded-lg hover:bg-blue-950 shadow-md hidden">
                     Recent Cities
                 </button>
             </div>
-            
+
             <!-- Dropdown for Recent Cities -->
             <div class="relative mb-4 dropdown">
                 <div id="recentCitiesList" class="absolute hidden bg-white shadow-md rounded-lg mt-2 w-full z-10">
                     <!-- Recent cities will be appended here -->
                 </div>
             </div>
-            
+
             <!-- Display Error Messages -->
             <div id="errorDisplay" class="text-red-500 mb-4"></div>
-            
+
             <!-- Weather Data Display -->
-            <div id="weatherDisplay" class="hidden bg-lime-300 text-black p-4 mb-4 shadow-md rounded-lg w-full mx-auto transition duration-300 ease-in-out transform hover:scale-100 z-0">
+            <div id="weatherDisplay"
+                class="hidden bg-lime-300 text-black p-4 mb-4 shadow-md rounded-lg w-full mx-auto transition duration-300 ease-in-out transform hover:scale-100 z-0">
                 <h2 id="city-name" class="text-3xl font-bold mb-4"></h2>
                 <div class="flex justify-between">
                     <div class="flex-1">
@@ -57,11 +77,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Extended Forecast Section -->
             <div class="relative mb-4 text-center">
-                <h3 id="extendedForecast" class="hidden text-3xl flex-grow bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white shadow-md flex space-x-2 mb-4">5-Day Forecast</h3>
-                <div id="extendedForecastDisplay" class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4 transition duration-300 ease-in-out transform hover:scale-105"></div>
+                <h3 id="extendedForecast"
+                    class="hidden text-3xl flex-grow bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-white shadow-md flex space-x-2 mb-4">
+                    5-Day Forecast</h3>
+                <div id="extendedForecastDisplay"
+                    class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4 transition duration-300 ease-in-out transform hover:scale-105">
+                </div>
             </div>
         </div>
     </div>
@@ -74,5 +98,5 @@
     <!-- JavaScript File -->
     <script src="../src/app.js"></script>
 </body>
-</html>
 
+</html>

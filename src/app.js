@@ -6,6 +6,13 @@ document.getElementById('searchButton').addEventListener('click', async () => {
     handleSearch();
 });
 
+// Add event listener to clear button
+document.getElementById('clearInput').addEventListener('click', () => {
+    console.log('Clear button clicked'); // Debugging statement
+    document.getElementById('cityInput').value = ''; // Clear the input field
+});
+
+
 document.getElementById('currentLocationButton').addEventListener('click', async () => {
     clearError(); // Clear previous error message
     showLoading();
@@ -26,6 +33,17 @@ document.getElementById('recentCitiesButton').addEventListener('click', () => {
     const recentCitiesList = document.getElementById('recentCitiesList');
     recentCitiesList.classList.toggle('hidden');
 });
+
+// Event listener for opening dropdown
+document.getElementById('recentCitiesButton').addEventListener('click', () => {
+    document.getElementById('recentCitiesList').classList.remove('hidden');
+});
+
+// Event listener for closing dropdown
+document.getElementById('closeDropdown').addEventListener('click', () => {
+    document.getElementById('recentCitiesList').classList.add('hidden');
+});
+
 
 // Hide dropdown when clicking outside
 document.addEventListener('click', (event) => {
@@ -151,13 +169,14 @@ function addCityToDropdown(city) {
     const recentCitiesButton = document.getElementById('recentCitiesButton');
     let cities = JSON.parse(localStorage.getItem('recentCities')) || [];
     if (!cities.includes(city)) {
-        cities.push(city);
-        if (cities.length > 5) cities.shift();
+        cities.unshift(city); // Insert the city at the beginning of the array
+        if (cities.length > 5) cities.pop(); // Ensure only last 5 cities are stored
         localStorage.setItem('recentCities', JSON.stringify(cities));
     }
     recentCitiesButton.classList.remove('hidden');
     renderRecentCities();
 }
+
 
 // Render recent cities in the dropdown
 function renderRecentCities() {
